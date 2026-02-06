@@ -725,6 +725,33 @@ h1, h2, h3, h4 {
         padding: 3px 10px;
     }
 }
+/* Project Links */
+.project-links {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.dark-mode .project-links {
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-link:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
 
 @media (max-width: 480px) {
     .hero {

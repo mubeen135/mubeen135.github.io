@@ -94,13 +94,13 @@ h1, h2, h3, h4 {
     padding: 20px;
 }
 
-.logo {
+/* .logo {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
-}
+} */
 
 .nav-menu {
     display: flex;
@@ -769,5 +769,140 @@ h1, h2, h3, h4 {
     .projects-grid,
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.code-bracket {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.logo-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 5px;
+    animation: gradient-shift 3s ease infinite;
+    background-size: 200% 200%;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.logo-firstname {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark-color);
+    letter-spacing: 1px;
+}
+
+.dark-mode .logo-firstname {
+    color: var(--light-color);
+}
+
+.logo-lastname {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Logo Hover Effects */
+.logo:hover .code-bracket {
+    animation: bounce 0.5s ease;
+    color: var(--secondary-color);
+}
+
+.logo:hover .logo-gradient {
+    animation: gradient-shift-fast 1s ease infinite;
+}
+
+/* Logo Animations */
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes gradient-shift-fast {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-3px);
+    }
+}
+
+@keyframes cursor-blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* For Mobile Responsiveness */
+@media (max-width: 768px) {
+    .logo-name {
+        display: none;
+    }
+    
+    .logo {
+        gap: 5px;
+    }
+    
+    .logo-gradient {
+        font-size: 1.6rem;
+    }
+    
+    .code-bracket {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-gradient {
+        font-size: 1.4rem;
+    }
+    
+    .code-bracket {
+        font-size: 1.3rem;
     }
 }

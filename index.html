@@ -148,21 +148,9 @@ nav a:hover::after{transform:scaleX(1)}
 .ptag{padding:4px 10px;font-size:.63rem;letter-spacing:.06em;border-radius:2px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:rgba(232,201,122,.6)}
 
 /* FEATURED PROJECT (spans 2 cols) */
-.featured-card{
-  grid-column:span 2;
-  border-color:rgba(232,201,122,.22)!important;
-  background:linear-gradient(135deg,rgba(232,201,122,.04),rgba(240,147,251,.03))!important;
-}
+.featured-card{grid-column:span 2;border-color:rgba(232,201,122,.22)!important;background:linear-gradient(135deg,rgba(232,201,122,.04),rgba(240,147,251,.03))!important}
 .featured-card .proj-num{font-size:4rem}
-.proj-live-link{
-  display:inline-flex;align-items:center;gap:5px;
-  margin-left:12px;padding:3px 12px;
-  background:linear-gradient(135deg,rgba(232,201,122,.15),rgba(240,147,251,.1));
-  border:1px solid rgba(232,201,122,.35);
-  font-size:.62rem;letter-spacing:.12em;font-weight:700;text-transform:uppercase;
-  text-decoration:none;color:var(--gold);border-radius:3px;
-  vertical-align:middle;transition:all .25s;
-}
+.proj-live-link{display:inline-flex;align-items:center;gap:5px;margin-left:12px;padding:3px 12px;background:linear-gradient(135deg,rgba(232,201,122,.15),rgba(240,147,251,.1));border:1px solid rgba(232,201,122,.35);font-size:.62rem;letter-spacing:.12em;font-weight:700;text-transform:uppercase;text-decoration:none;color:var(--gold);border-radius:3px;vertical-align:middle;transition:all .25s}
 .proj-live-link:hover{background:linear-gradient(135deg,rgba(232,201,122,.28),rgba(240,147,251,.18));border-color:var(--gold);color:var(--gold2);transform:translateY(-1px)}
 
 /* EDUCATION */
@@ -196,6 +184,52 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
 .reveal.visible{opacity:1;transform:translateY(0)}
 .stagger{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
 .stagger.visible{opacity:1;transform:translateY(0)}
+
+/* WHATSAPP BUTTON - FIXED & FULLY CLICKABLE */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1a1a2e;
+  backdrop-filter: blur(8px);
+  padding: 12px 20px 12px 16px;
+  border-radius: 60px;
+  border: 1px solid rgba(37, 211, 102, 0.5);
+  text-decoration: none;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: #25D366;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(37,211,102,0.15);
+  cursor: pointer;
+}
+.whatsapp-btn svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.whatsapp-btn span {
+  margin-right: 4px;
+}
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+  background: #0f1a1f;
+  border-color: #25D366;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.3);
+  color: #2ecc71;
+}
+@media (max-width: 680px) {
+  .whatsapp-btn span { display: none; }
+  .whatsapp-btn { padding: 12px; border-radius: 50px; bottom: 20px; right: 20px; }
+  .whatsapp-btn svg { width: 30px; height: 30px; }
+}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
@@ -332,36 +366,12 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
   <div class="sec-eyebrow">02 — Expertise</div>
   <div class="sec-title">My <em>Toolkit</em></div>
   <div class="skills-container">
-    <div class="skill-block stagger">
-      <span class="sk-icon">⚙️</span>
-      <div class="sk-name">Backend Development</div>
-      <div class="sk-tags"><span class="sk-tag">PHP</span><span class="sk-tag">Laravel</span><span class="sk-tag">REST APIs</span><span class="sk-tag">Microservices</span><span class="sk-tag">Node.js</span><span class="sk-tag">XML</span></div>
-    </div>
-    <div class="skill-block stagger">
-      <span class="sk-icon">🎨</span>
-      <div class="sk-name">Frontend</div>
-      <div class="sk-tags"><span class="sk-tag">React.js</span><span class="sk-tag">Vue.js</span><span class="sk-tag">Next.js</span><span class="sk-tag">JavaScript</span><span class="sk-tag">HTML5/CSS3</span><span class="sk-tag">jQuery</span><span class="sk-tag">AJAX</span></div>
-    </div>
-    <div class="skill-block stagger">
-      <span class="sk-icon">🗄️</span>
-      <div class="sk-name">Databases</div>
-      <div class="sk-tags"><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">PostgreSQL</span></div>
-    </div>
-    <div class="skill-block stagger">
-      <span class="sk-icon">☁️</span>
-      <div class="sk-name">DevOps &amp; Cloud</div>
-      <div class="sk-tags"><span class="sk-tag">Docker</span><span class="sk-tag">AWS</span><span class="sk-tag">CI/CD (GitHub)</span><span class="sk-tag">LAMP</span><span class="sk-tag">WAMP</span><span class="sk-tag">XAMPP</span></div>
-    </div>
-    <div class="skill-block stagger">
-      <span class="sk-icon">🤖</span>
-      <div class="sk-name">AI &amp; Productivity</div>
-      <div class="sk-tags"><span class="sk-tag">ChatGPT</span><span class="sk-tag">MS Copilot</span><span class="sk-tag">Perplexity AI</span><span class="sk-tag">Google Gemini</span><span class="sk-tag">WordPress</span></div>
-    </div>
-    <div class="skill-block stagger">
-      <span class="sk-icon">🧩</span>
-      <div class="sk-name">Architecture &amp; Strategy</div>
-      <div class="sk-tags"><span class="sk-tag">Agile / Scrum</span><span class="sk-tag">B2B / B2C</span><span class="sk-tag">API Integration</span><span class="sk-tag">Scalable Architecture</span><span class="sk-tag">Security</span></div>
-    </div>
+    <div class="skill-block stagger"><span class="sk-icon">⚙️</span><div class="sk-name">Backend Development</div><div class="sk-tags"><span class="sk-tag">PHP</span><span class="sk-tag">Laravel</span><span class="sk-tag">REST APIs</span><span class="sk-tag">Microservices</span><span class="sk-tag">Node.js</span><span class="sk-tag">XML</span></div></div>
+    <div class="skill-block stagger"><span class="sk-icon">🎨</span><div class="sk-name">Frontend</div><div class="sk-tags"><span class="sk-tag">React.js</span><span class="sk-tag">Vue.js</span><span class="sk-tag">Next.js</span><span class="sk-tag">JavaScript</span><span class="sk-tag">HTML5/CSS3</span><span class="sk-tag">jQuery</span><span class="sk-tag">AJAX</span></div></div>
+    <div class="skill-block stagger"><span class="sk-icon">🗄️</span><div class="sk-name">Databases</div><div class="sk-tags"><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">PostgreSQL</span></div></div>
+    <div class="skill-block stagger"><span class="sk-icon">☁️</span><div class="sk-name">DevOps &amp; Cloud</div><div class="sk-tags"><span class="sk-tag">Docker</span><span class="sk-tag">AWS</span><span class="sk-tag">CI/CD (GitHub)</span><span class="sk-tag">LAMP</span><span class="sk-tag">WAMP</span><span class="sk-tag">XAMPP</span></div></div>
+    <div class="skill-block stagger"><span class="sk-icon">🤖</span><div class="sk-name">AI &amp; Productivity</div><div class="sk-tags"><span class="sk-tag">ChatGPT</span><span class="sk-tag">MS Copilot</span><span class="sk-tag">Perplexity AI</span><span class="sk-tag">Google Gemini</span><span class="sk-tag">WordPress</span></div></div>
+    <div class="skill-block stagger"><span class="sk-icon">🧩</span><div class="sk-name">Architecture &amp; Strategy</div><div class="sk-tags"><span class="sk-tag">Agile / Scrum</span><span class="sk-tag">B2B / B2C</span><span class="sk-tag">API Integration</span><span class="sk-tag">Scalable Architecture</span><span class="sk-tag">Security</span></div></div>
   </div>
 </section>
 
@@ -372,50 +382,10 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
   <div class="sec-eyebrow">03 — Career</div>
   <div class="sec-title">Where I've <em>Worked</em></div>
   <div class="timeline">
-
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-badge">Oct 2023 – Sep 2025</div>
-      <div class="tl-company">Go4Digitals Solutions · Janakpuri, Delhi</div>
-      <div class="tl-role">Senior Laravel Developer</div>
-      <p class="tl-desc">Collaborated in a dynamic team building high-impact web applications with Laravel, React.js, Vue.js, and JavaScript. Led end-to-end lifecycles from requirements through deployment, ensuring secure and scalable systems for clients across Australia and India.</p>
-      <div class="tl-projects">
-        <div class="tl-proj"><div class="tp-name">Buzy.team &amp; Beta.Buzy.team</div><div class="tp-desc">Real-time task management platforms with live messaging and synchronization using Node.js, Laravel, and Vue.js.</div></div>
-        <div class="tl-proj"><div class="tp-name">Business2Sell.com.au</div><div class="tp-desc">Australia's largest real estate &amp; business sales platform — thousands of daily buyers and sellers, built on a robust Laravel core.</div></div>
-        <div class="tl-proj"><div class="tp-name">BAEats.com.au</div><div class="tp-desc">Contactless food ordering system with table reservations and order management using Laravel &amp; Vue.js.</div></div>
-        <div class="tl-proj"><div class="tp-name">AuqafBoardWB.org</div><div class="tp-desc">Official government portal for the West Bengal Auqaf Board — responsive, accessible, multi-section architecture with notice board, tenders, and UMEED portal.</div></div>
-      </div>
-    </div>
-
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-badge">Nov 2020 – Aug 2023</div>
-      <div class="tl-company">Lifelong Associate Travel (P) Limited · Gurugram</div>
-      <div class="tl-role">PHP Laravel Developer</div>
-      <p class="tl-desc">Delivered diverse web and mobile applications across travel, hospitality, and government sectors. Focused on API-driven platforms, dynamic lead routing, and performance optimization for high-traffic systems.</p>
-      <div class="tl-projects">
-        <div class="tl-proj"><div class="tp-name">HolidayRewardz.com</div><div class="tp-desc">Travel booking engine with TBO API integration, dynamic lead routing by location/package, data caching, and pagination for real-time hotel/flight data.</div></div>
-        <div class="tl-proj"><div class="tp-name">RocketeSIMs.com</div><div class="tp-desc">eSIM portal with purchase and activation system featuring QR code scanning for seamless connectivity setup.</div></div>
-        <div class="tl-proj"><div class="tp-name">FastTrackVisa.com</div><div class="tp-desc">Visa application platform with secure data handling and real-time guidance using Laravel and React.</div></div>
-      </div>
-    </div>
-
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-badge">Mar 2019 – Aug 2019</div>
-      <div class="tl-company">Redlemon Digital Pvt. Ltd · Noida</div>
-      <div class="tl-role">Web Developer</div>
-      <p class="tl-desc">Developed real estate platforms with Laravel and contributed to ashianahousing.com — ensuring optimal performance, security, and seamless user experience for one of India's top housing companies.</p>
-    </div>
-
-    <div class="tl-item reveal">
-      <div class="tl-dot"></div>
-      <div class="tl-badge">Aug 2018 – Feb 2019</div>
-      <div class="tl-company">ITS-Solutions · Noida</div>
-      <div class="tl-role">Web Developer</div>
-      <p class="tl-desc">Early career role focused on full-stack development fundamentals. Built scalable solutions in HTML, CSS, JavaScript, PHP, and Laravel under senior developer mentorship.</p>
-    </div>
-
+    <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-badge">Oct 2023 – Sep 2025</div><div class="tl-company">Go4Digitals Solutions · Janakpuri, Delhi</div><div class="tl-role">Senior Laravel Developer</div><p class="tl-desc">Collaborated in a dynamic team building high-impact web applications with Laravel, React.js, Vue.js, and JavaScript. Led end-to-end lifecycles from requirements through deployment, ensuring secure and scalable systems for clients across Australia and India.</p><div class="tl-projects"><div class="tl-proj"><div class="tp-name">Buzy.team &amp; Beta.Buzy.team</div><div class="tp-desc">Real-time task management platforms with live messaging and synchronization using Node.js, Laravel, and Vue.js.</div></div><div class="tl-proj"><div class="tp-name">Business2Sell.com.au</div><div class="tp-desc">Australia's largest real estate &amp; business sales platform — thousands of daily buyers and sellers.</div></div><div class="tl-proj"><div class="tp-name">BAEats.com.au</div><div class="tp-desc">Contactless food ordering system with table reservations and order management.</div></div><div class="tl-proj"><div class="tp-name">AuqafBoardWB.org</div><div class="tp-desc">Official government portal for West Bengal Auqaf Board — responsive, accessible, multi-section.</div></div></div></div>
+    <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-badge">Nov 2020 – Aug 2023</div><div class="tl-company">Lifelong Associate Travel (P) Limited · Gurugram</div><div class="tl-role">PHP Laravel Developer</div><p class="tl-desc">Delivered diverse web and mobile applications across travel, hospitality, and government sectors. Focused on API-driven platforms, dynamic lead routing, and performance optimization.</p><div class="tl-projects"><div class="tl-proj"><div class="tp-name">HolidayRewardz.com</div><div class="tp-desc">Travel booking engine with TBO API integration, dynamic lead routing, data caching.</div></div><div class="tl-proj"><div class="tp-name">RocketeSIMs.com</div><div class="tp-desc">eSIM portal with purchase and activation system featuring QR code scanning.</div></div><div class="tl-proj"><div class="tp-name">FastTrackVisa.com</div><div class="tp-desc">Visa application platform with secure data handling and real-time guidance.</div></div></div></div>
+    <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-badge">Mar 2019 – Aug 2019</div><div class="tl-company">Redlemon Digital Pvt. Ltd · Noida</div><div class="tl-role">Web Developer</div><p class="tl-desc">Developed real estate platforms with Laravel and contributed to ashianahousing.com — ensuring optimal performance and security.</p></div>
+    <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-badge">Aug 2018 – Feb 2019</div><div class="tl-company">ITS-Solutions · Noida</div><div class="tl-role">Web Developer</div><p class="tl-desc">Early career role focused on full-stack development fundamentals. Built scalable solutions in HTML, CSS, JavaScript, PHP, and Laravel.</p></div>
   </div>
 </section>
 
@@ -426,60 +396,13 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
   <div class="sec-eyebrow">04 — Portfolio</div>
   <div class="sec-title">Featured <em>Projects</em></div>
   <div class="proj-grid">
-
-    <div class="proj-card stagger">
-      <div class="proj-num">01</div>
-      <div class="proj-title">Business2Sell.com.au</div>
-      <p class="proj-desc">Australia's largest real estate &amp; business transaction platform, handling thousands of daily buyer-seller interactions with a robust, scalable Laravel backend.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">MySQL</span></div>
-    </div>
-
-    <div class="proj-card stagger">
-      <div class="proj-num">02</div>
-      <div class="proj-title">HolidayRewardz.com</div>
-      <p class="proj-desc">Full-stack travel booking engine with real-time TBO API integration for hotels &amp; flights. Dynamic lead routing by location and package type for maximum conversion.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">React</span><span class="ptag">Next.js</span><span class="ptag">TBO API</span></div>
-    </div>
-
-    <div class="proj-card stagger">
-      <div class="proj-num">03</div>
-      <div class="proj-title">Buzy.team</div>
-      <p class="proj-desc">Real-time collaborative task management platform with live messaging, synchronization, and enterprise-grade team workflows at scale.</p>
-      <div class="proj-tags"><span class="ptag">Vue.js</span><span class="ptag">Laravel</span><span class="ptag">Node.js</span></div>
-    </div>
-
-    <div class="proj-card stagger">
-      <div class="proj-num">04</div>
-      <div class="proj-title">RocketeSIMs.com</div>
-      <p class="proj-desc">eSIM purchase and activation portal with QR code scanning for instant connectivity — built for global travelers and remote workers worldwide.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">QR Code</span></div>
-    </div>
-
-    <div class="proj-card stagger">
-      <div class="proj-num">05</div>
-      <div class="proj-title">BAEats.com.au</div>
-      <p class="proj-desc">Contactless food ordering solution for hospitality businesses — smooth table reservations, real-time order tracking, and efficient kitchen management.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">Vue.js</span><span class="ptag">MySQL</span></div>
-    </div>
-
-    <div class="proj-card stagger">
-      <div class="proj-num">06</div>
-      <div class="proj-title">FastTrackVisa.com</div>
-      <p class="proj-desc">Streamlined visa application platform with bank-grade data security, real-time status guidance, and an intuitive multi-step application journey.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">React</span><span class="ptag">Security</span></div>
-    </div>
-
-    <!-- FEATURED: spans 2 columns -->
-    <div class="proj-card stagger featured-card">
-      <div class="proj-num">07</div>
-      <div class="proj-title">
-        AuqafBoardWB.org
-        <a href="https://auqafboardwb.org/" target="_blank" rel="noopener" class="proj-live-link">↗ Live Site</a>
-      </div>
-      <p class="proj-desc">Official government web portal for the <strong style="color:var(--text)">West Bengal Auqaf Board</strong> — a statutory body established under the Waqf Act, 1995 (Central Act 43 of 1995). The portal serves as the primary public-facing platform for the Board, covering institutional information, governance structure, and citizen-facing services.<br><br>Built with a fully responsive, multi-section architecture including: About Us, Our Functions (Superintendence, Administration, Accountability, Heritage), Governance &amp; Administration, and the Central Waqf Council (CWC) section. Features include: accessibility controls (font size, high-contrast), dual helpline display, notice board, tenders, and UMEED Central Portal integration.</p>
-      <div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">MySQL</span><span class="ptag">Government Portal</span><span class="ptag">Responsive Design</span><span class="ptag">Accessibility</span><span class="ptag">Ministry of Minority Affairs</span></div>
-    </div>
-
+    <div class="proj-card stagger"><div class="proj-num">01</div><div class="proj-title">Business2Sell.com.au</div><p class="proj-desc">Australia's largest real estate &amp; business transaction platform, handling thousands of daily buyer-seller interactions with a robust, scalable Laravel backend.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">MySQL</span></div></div>
+    <div class="proj-card stagger"><div class="proj-num">02</div><div class="proj-title">HolidayRewardz.com</div><p class="proj-desc">Full-stack travel booking engine with real-time TBO API integration for hotels &amp; flights. Dynamic lead routing by location and package type for maximum conversion.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">React</span><span class="ptag">Next.js</span><span class="ptag">TBO API</span></div></div>
+    <div class="proj-card stagger"><div class="proj-num">03</div><div class="proj-title">Buzy.team</div><p class="proj-desc">Real-time collaborative task management platform with live messaging, synchronization, and enterprise-grade team workflows at scale.</p><div class="proj-tags"><span class="ptag">Vue.js</span><span class="ptag">Laravel</span><span class="ptag">Node.js</span></div></div>
+    <div class="proj-card stagger"><div class="proj-num">04</div><div class="proj-title">RocketeSIMs.com</div><p class="proj-desc">eSIM purchase and activation portal with QR code scanning for instant connectivity — built for global travelers and remote workers worldwide.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">QR Code</span></div></div>
+    <div class="proj-card stagger"><div class="proj-num">05</div><div class="proj-title">BAEats.com.au</div><p class="proj-desc">Contactless food ordering solution for hospitality businesses — smooth table reservations, real-time order tracking, and efficient kitchen management.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">Vue.js</span><span class="ptag">MySQL</span></div></div>
+    <div class="proj-card stagger"><div class="proj-num">06</div><div class="proj-title">FastTrackVisa.com</div><p class="proj-desc">Streamlined visa application platform with bank-grade data security, real-time status guidance, and an intuitive multi-step application journey.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">React</span><span class="ptag">Security</span></div></div>
+    <div class="proj-card stagger featured-card"><div class="proj-num">07</div><div class="proj-title">AuqafBoardWB.org <a href="https://auqafboardwb.org/" target="_blank" rel="noopener" class="proj-live-link">↗ Live Site</a></div><p class="proj-desc">Official government web portal for the <strong style="color:var(--text)">West Bengal Auqaf Board</strong> — a statutory body established under the Waqf Act, 1995. Features accessibility controls, notice board, tenders, and UMEED Central Portal integration.</p><div class="proj-tags"><span class="ptag">Laravel</span><span class="ptag">PHP</span><span class="ptag">MySQL</span><span class="ptag">Government Portal</span><span class="ptag">Accessibility</span></div></div>
   </div>
 </section>
 
@@ -490,24 +413,9 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
   <div class="sec-eyebrow">05 — Academics</div>
   <div class="sec-title">My <em>Education</em></div>
   <div class="edu-grid">
-    <div class="edu-card stagger">
-      <div class="edu-year">2021</div>
-      <div class="edu-deg">Master of Information Technology (MSc IT)</div>
-      <div class="edu-school">Uttarakhand Open University, Haldwani</div>
-      <div class="edu-badge">✦ First Division</div>
-    </div>
-    <div class="edu-card stagger">
-      <div class="edu-year">2018</div>
-      <div class="edu-deg">PG Diploma in Computer Application (PGDCA)</div>
-      <div class="edu-school">Jamia Millia Islamia — Central University, New Delhi</div>
-      <div class="edu-badge">✦ First Division</div>
-    </div>
-    <div class="edu-card stagger">
-      <div class="edu-year">2013</div>
-      <div class="edu-deg">Bachelor of Science (B.Sc)</div>
-      <div class="edu-school">K.G.K. PG College, Moradabad, Uttar Pradesh</div>
-      <div class="edu-badge">✦ Second Division</div>
-    </div>
+    <div class="edu-card stagger"><div class="edu-year">2021</div><div class="edu-deg">Master of Information Technology (MSc IT)</div><div class="edu-school">Uttarakhand Open University, Haldwani</div><div class="edu-badge">✦ First Division</div></div>
+    <div class="edu-card stagger"><div class="edu-year">2018</div><div class="edu-deg">PG Diploma in Computer Application (PGDCA)</div><div class="edu-school">Jamia Millia Islamia — Central University, New Delhi</div><div class="edu-badge">✦ First Division</div></div>
+    <div class="edu-card stagger"><div class="edu-year">2013</div><div class="edu-deg">Bachelor of Science (B.Sc)</div><div class="edu-school">K.G.K. PG College, Moradabad, Uttar Pradesh</div><div class="edu-badge">✦ Second Division</div></div>
   </div>
 </section>
 
@@ -517,39 +425,29 @@ footer strong{background:linear-gradient(135deg,var(--gold),var(--gold2));-webki
 <section class="section section-alt" id="contact">
   <div class="sec-eyebrow">06 — Contact</div>
   <div class="contact-layout">
-    <div class="reveal">
-      <div class="contact-heading">Let's Build<br>Something <em>Extraordinary</em></div>
-      <p class="contact-sub">Open to full-time roles, freelance projects, and ambitious collaborations. Based in New Delhi — available globally, remote-first friendly.</p>
-    </div>
+    <div class="reveal"><div class="contact-heading">Let's Build<br>Something <em>Extraordinary</em></div><p class="contact-sub">Open to full-time roles, freelance projects, and ambitious collaborations. Based in New Delhi — available globally, remote-first friendly.</p></div>
     <div class="contact-cards reveal">
-      <a href="mailto:mmubeen135@gmail.com" class="ccard">
-        <div><div class="ccard-lbl">Email</div><div class="ccard-val">mmubeen135@gmail.com</div></div>
-        <span class="ccard-arr">↗</span>
-      </a>
-      <a href="tel:+917906396581" class="ccard">
-        <div><div class="ccard-lbl">Phone</div><div class="ccard-val">+91 790 6396 581</div></div>
-        <span class="ccard-arr">↗</span>
-      </a>
-      <div class="ccard">
-        <div><div class="ccard-lbl">Location</div><div class="ccard-val">New Delhi, India</div></div>
-        <span class="ccard-arr">📍</span>
-      </div>
-      <div class="ccard">
-        <div><div class="ccard-lbl">Availability</div><div class="ccard-val" style="color:var(--teal)">● Open to Work</div></div>
-        <span class="ccard-arr">✓</span>
-      </div>
+      <a href="mailto:mmubeen135@gmail.com" class="ccard"><div><div class="ccard-lbl">Email</div><div class="ccard-val">mmubeen135@gmail.com</div></div><span class="ccard-arr">↗</span></a>
+      <a href="tel:+917906396581" class="ccard"><div><div class="ccard-lbl">Phone</div><div class="ccard-val">+91 790 6396 581</div></div><span class="ccard-arr">↗</span></a>
+      <div class="ccard"><div><div class="ccard-lbl">Location</div><div class="ccard-val">New Delhi, India</div></div><span class="ccard-arr">📍</span></div>
+      <div class="ccard"><div><div class="ccard-lbl">Availability</div><div class="ccard-val" style="color:var(--teal)">● Open to Work</div></div><span class="ccard-arr">✓</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div>© 2025 <strong>Mohammad Mubeen</strong> — All rights reserved</div>
-  <div>Senior Full-Stack Developer · New Delhi, India</div>
-</footer>
+<footer><div>© 2025 <strong>Mohammad Mubeen</strong> — All rights reserved</div><div>Senior Full-Stack Developer · New Delhi, India</div></footer>
+
+<!-- ═══ FIXED WHATSAPP BUTTON (fully functional, clickable, opens chat) ═══ -->
+<a href="https://wa.me/917906396581" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="14" fill="#25D366" stroke="white" stroke-width="0.6"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.5 8.5C21.6 6.6 19.1 5.5 16.4 5.5C10.9 5.5 6.4 10 6.4 15.5C6.4 17.3 6.9 19.1 7.8 20.6L6.3 25.7L11.6 24.2C13.1 25 14.7 25.5 16.4 25.5C21.9 25.5 26.4 21 26.4 15.5C26.5 12.8 25.4 10.4 23.5 8.5ZM16.4 23.8C14.9 23.8 13.4 23.4 12.1 22.6L11.8 22.4L8.6 23.3L9.5 20.2L9.3 19.9C8.4 18.5 7.9 16.9 7.9 15.2C7.9 10.7 11.6 7 16.1 7C18.3 7 20.3 7.9 21.8 9.4C23.3 10.9 24.1 12.9 24.1 15.1C24.2 19.8 20.9 23.8 16.4 23.8ZM20.9 17.4C20.6 17.3 19.1 16.5 18.9 16.5C18.6 16.4 18.5 16.4 18.3 16.7C18.1 17 17.5 17.7 17.4 17.9C17.2 18.1 17.1 18.1 16.8 17.9C15.1 17.1 14 16.4 12.8 14.5C12.5 14 13.1 14 13.6 13C13.7 12.8 13.6 12.6 13.6 12.5C13.5 12.4 12.9 10.9 12.7 10.3C12.5 9.8 12.2 9.8 12 9.8H11.5C11.3 9.8 10.9 9.9 10.6 10.2C10.3 10.5 9.6 11.2 9.6 12.7C9.6 14.2 10.6 15.6 10.8 15.8C10.9 16 12.9 19 15.9 20.3C17.9 21.1 18.7 21.2 19.7 21C20.3 20.9 21.6 20.2 21.8 19.4C22.1 18.6 22.1 17.9 22 17.8C21.8 17.6 21.2 17.5 20.9 17.4Z" fill="white"/>
+  </svg>
+  <span>WhatsApp</span>
+</a>
 
 <script>
-/* ─── CUSTOM CURSOR ─── */
+/* ─── CUSTOM CURSOR (fully preserves all existing interactions) ─── */
 const cur = document.getElementById('cur');
 const cur2 = document.getElementById('cur2');
 let mx = 0, my = 0, rx = 0, ry = 0;
@@ -562,7 +460,7 @@ document.addEventListener('mousemove', e => {
   cur2.style.left = rx + 'px'; cur2.style.top = ry + 'px';
   requestAnimationFrame(loop);
 })();
-document.querySelectorAll('a, .hstat, .skill-block, .proj-card, .edu-card, .ccard, .pill').forEach(el => {
+document.querySelectorAll('a, .hstat, .skill-block, .proj-card, .edu-card, .ccard, .pill, .whatsapp-btn').forEach(el => {
   el.addEventListener('mouseenter', () => {
     cur.style.width = '20px'; cur.style.height = '20px'; cur.style.background = 'var(--pink)';
     cur2.style.width = '60px'; cur2.style.height = '60px'; cur2.style.borderColor = 'rgba(240,147,251,.4)';
@@ -573,7 +471,7 @@ document.querySelectorAll('a, .hstat, .skill-block, .proj-card, .edu-card, .ccar
   });
 });
 
-/* ─── PARTICLE CANVAS ─── */
+/* ─── PARTICLE CANVAS (unchanged) ─── */
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let W = canvas.width = innerWidth, H = canvas.height = innerHeight;
@@ -619,13 +517,12 @@ document.addEventListener('mousemove', e => {
   });
 });
 
-/* ─── SCROLL REVEAL ─── */
+/* ─── SCROLL REVEAL (unchanged) ─── */
 const io = new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) e.target.classList.add('visible');
 }), { threshold: .12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* ─── STAGGER GRIDS ─── */
 const io2 = new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) {
     const items = e.target.querySelectorAll('.stagger');
